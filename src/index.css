@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Стилизация скролла  */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-darkBg/70 rounded-lg;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/15 rounded-lg;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+
+  :root {
+    --accent: #e16428;
+    --background: #090c10;
+
+    --accent: rgb(177, 76, 185);
+    --secondary: rgb(16, 144, 223);
+  }
+
+  /* Основные настройки  */
+  html {
+    font-family: "Oswald", serif;
+  }
+
+  body {
+    background-color: #090808;
+    background-image: url("./images/patternCart.svg");
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: -1;
+  }
+
+  .custom-grad {
+    @apply bg-gradient-to-r from-rose-400 to-orange-300;
+  }
+
+  .custom-rainbow {
+    transform: translate3d(0, 0, 0);
+    --bg: currentcolor;
+    --duration: 60s;
+    --stripes: repeating-linear-gradient(
+      110deg,
+      var(--bg) 0%,
+      var(--bg) 7%,
+      transparent 10%,
+      transparent 12%,
+      var(--bg) 16%
+    );
+    --rainbow: repeating-linear-gradient(
+      110deg,
+      #60a5fa 10%,
+      #e879f9 15%,
+      #60a5fa 20%,
+      #5eead4 25%,
+      #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 120%, 200%;
+    background-position: 50% 50%, 50% 50%;
+  }
+  .custom-rainbow-value {
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 100%, 100%;
+    background-position: 50% 50%;
+  }
+  .animate-god-rays {
+    animation: god-rays var(--duration) cubic-bezier(0.15, 0, 0.85, 1) infinite
+      alternate;
+  }
+
+  @keyframes god-rays {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  body::after {
+    background: linear-gradient(0deg, #09080800, #090808);
+    content: "";
+    height: 700px;
+    left: 0;
+    opacity: 0.74;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .customBg {
+    width: 100%;
+    height: 100%;
+    background-size: 64px;
+    background-repeat: repeat;
+    background-image: url(./images/static.png);
+    opacity: 0.06;
+
+    left: calc(50.00000000000002% - 100% / 2);
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+  }
+
+  .custom-input {
+    @apply block w-full text-title text-lg py-4 outline-none border-b-2 border-title/15 bg-transparent placeholder:text-title/50 focus:border-accent;
+  }
+
+  .custom-box {
+    @apply backdrop-blur-3xl rounded-3xl bg-title/5 border border-title/10 lg:p-10 p-6;
+  }
+
+  .frameTes {
+    color: #ffffff !important;
+  }
+
+  .frameTes .sw-reviews-more {
+    @apply bg-accent text-white border-accent !important;
+  }
+
+  @keyframes animate_pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.75);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(228, 25, 49, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(228, 25, 49, 0);
+    }
+  }
+
+  .custom-counter {
+    counter-reset: list;
+  }
+  .custom-counter > li {
+    counter-increment: list;
+  }
+
+  .custom-counter > li::before {
+    content: counter(list, decimal-leading-zero);
+    font-size: 26px;
+    margin-right: 20px;
+    @apply text-accent;
+  }
+
+  .slick-slide {
+    @apply overflow-hidden rounded-xl;
+  }
+  .slick-slider {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .slick-next {
+    right: 8px;
+    z-index: 5;
+  }
+  .slick-prev {
+    left: 8px;
+    z-index: 5;
+  }
+  .slick-next::before,
+  .slick-prev::before {
+    font-size: 25px;
+  }
+
+  .section {
+    @apply py-[50px] lg:py-[100px] relative;
+  }
+
+  .section-title {
+    @apply text-base lg:text-xl font-semibold text-white;
+  }
+  .section-subtitle {
+    @apply text-white/80 text-sm lg:text-base;
+  }
+  .section-border {
+    @apply border-2 border-white/15 rounded-xl backdrop-blur-sm bg-darkBg/10;
+  }
+  .section-animation {
+    @apply scale-100 transition-all hover:scale-105 hover:shadow-xl hover:shadow-black/50;
+  }
+  .glow {
+    @apply rounded-full blur-2xl bg-accent/50 absolute -z-10 w-[300px] h-[200px];
+  }
+}
