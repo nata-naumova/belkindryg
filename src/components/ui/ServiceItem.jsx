@@ -1,15 +1,14 @@
-import { ArrowUpRight, Cpu, MoveRight } from "lucide-react";
 import { SERVICES } from "../../constants";
-import cartBg from "../../images/patternCart.png";
-import ButtonCustom from "../ButtonCustom";
+import GetButton from "../GetButton";
+import ButtonCustom from "../GetButton";
 
-const List = ({ handleClickCart }) => {
+const List = () => {
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
       {SERVICES &&
         SERVICES.map((product) => (
           <div key={product.title} className="">
-            <div className="custom-box h-full flex flex-col gap-4">
+            <div className="custom-box h-full flex flex-col gap-4 justify-between">
               <img
                 src={product.img}
                 alt={product.title}
@@ -32,7 +31,11 @@ const List = ({ handleClickCart }) => {
                     </li>
                   ))}
               </ul>
-              <ButtonCustom name={`Сборка ${product.price}`} link="#" />
+              <a href="#footer" className="text-center">
+                <GetButton variant="secondary">
+                  {`Сборка ${product.price}`}
+                </GetButton>
+              </a>
             </div>
           </div>
         ))}

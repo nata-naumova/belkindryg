@@ -13,7 +13,7 @@ const Footer = () => {
           <Logotype />
           <Contacts />
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 justify-between">
           <RequestFrom />
           <p className="text-title">
             &copy; {new Date().getFullYear()}. Все права защищены

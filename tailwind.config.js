@@ -11,8 +11,8 @@ export default {
     },
     extend: {
       colors: {
-        darkBg: "#272121",
-        accent: "#fc8507",
+        darkBg: "#030303",
+        accent: "#ff8a13",
         title: "#F6E9E9",
       },
     },

@@ -1,6 +1,5 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
-import ButtonCustom from "./ButtonCustom";
+import GetButton from "./GetButton";
 
 const RequestFrom = () => {
   return (
@@ -22,8 +21,7 @@ const RequestFrom = () => {
           placeholder="Введите телефон *"
           required
         />
-        <ButtonCustom name="Оставить заявку" type="button" />
-       
+        <GetButton variant="primary">Оставить заявку</GetButton>
       </div>
     </form>
   );
